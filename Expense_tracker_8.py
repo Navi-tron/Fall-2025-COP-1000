@@ -12,11 +12,12 @@ payees = []
 # Module for entering expenses   
 def entExpenses():
         # Expense Type - String from list
-        expTyp = input('\nPlease choose an expense type: Travel, Lodging, or Food: ').strip().lower()
-        if expTyp in {'travel', 'lodging', 'food'}:
-            expenseType = expTyp.title()
-        else:
-            print('Please enter a valid response')
+        while True:
+                expTyp = input('\nPlease choose an expense type: Travel, Lodging, or Food: ').strip().lower()
+                if expTyp in {'travel', 'lodging', 'food'}:
+                    expenseType = expTyp.title()
+                else:
+                    print('Please enter a valid response')
         # Expense Amount Menu - Float entry
         while True:
             try: 

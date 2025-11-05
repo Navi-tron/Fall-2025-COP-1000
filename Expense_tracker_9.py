@@ -5,14 +5,12 @@ tracker_date = datetime.now().strftime('%Y-%m-%d %H:%M')
 print('Today is:', tracker_date)
 
 # Module for creating storage area for user entries
-#idNum = []
 kind = []
 expenses = []
 payees = []
 
 # Module for entering expenses   
 def entExpenses():
-        #i = 1
         # Expense Type - String from list
         while True:
                 expTyp = input('\nPlease choose an expense type: Travel, Lodging, or Food: ').strip().lower()
@@ -31,11 +29,9 @@ def entExpenses():
         # Payee Menu - String open to user   
         payNme = str(input('\nEnter the name of the payee Company: '))
         payeeName = payNme.title()
-        #idNum.append(i)
         kind.append(expenseType)
         expenses.append(expenseAmount)
         payees.append(payeeName)
-        #i += 1
 
 # Module for summing total expenses   
 def add_expenses(expenses):
@@ -57,6 +53,9 @@ def printToScreen():
 
 # Module to remove last item entered
 def clearLast():
+     if not expenses:
+        print('No entries have been made.')
+        return   
     kind.pop()
     expenses.pop()
     payees.pop()
@@ -64,6 +63,9 @@ def clearLast():
 
 # Module for clearing entires
 def clearAll():
+    if not expenses:
+        print('No entries have been made.')
+        return    
     kind.clear()
     expenses.clear()
     payees.clear()

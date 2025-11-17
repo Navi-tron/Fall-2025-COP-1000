@@ -14,7 +14,7 @@ def entExpenses():
         # Expense Type - String from list
         while True:
                 expTyp = input('\nPlease choose an expense type: Travel, Lodging, or Food: ').strip().lower()
-                if expTyp in {'travel', 'lodging', 'food'}:
+                if expTyp in {'travel', 'lodging', 'food', 'other'}:
                     expenseType = expTyp.title()
                     break
                 else:

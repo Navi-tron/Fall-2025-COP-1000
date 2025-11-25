@@ -73,6 +73,9 @@ def clearAll():
 
 # Module for option to print to file
 def saveToFile():
+    if not expenses:
+        print('No entries have been made.')
+        return
     with open(f'expenses.{tracker_date}.txt', 'w') as file:
         file.write('Expense Tracker Entry Date: ')
         file.write(tracker_date + '\n')
